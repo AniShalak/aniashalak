@@ -97,9 +97,9 @@ html, body {
 /* Box2: Layout for the 3x3 grid of images */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 143px); /* 3 columns of 143px width */
-    grid-template-rows: repeat(3, 184px);    /* 3 rows of 184px height */
-    gap: 1px; /* 1px gap between frames */
+    grid-template-columns: repeat(3, 27%); /* 3 columns of 143px width */
+    grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
+    gap: 0.3%; /* 1px gap between frames */
     justify-content: center; /* Center the grid horizontally in the container */
     margin-top: 45px; /* Set this to 0px to remove extra margin */
     align-items: start; /* Align content to the top */
@@ -116,8 +116,8 @@ html, body {
 /* Styles for the frame with a blur effect on hover */
 .frame {
     background-color: white; /* Background for visualization */
-    width: 143px; /* Fixed frame width */
-    height: 184px; /* Fixed frame height */
+    width: 100%; /* Fixed frame width */
+    height: 100%; /* Fixed frame height */
     transition: filter 0.3s ease; /* Smooth transition for the filter */
     position: relative; /* Allows absolute positioning for the text */
     overflow: hidden; /* Hides overflow */
@@ -283,7 +283,7 @@ html, body {
     .grid-container {
         grid-template-columns: repeat(3, 30vw); /* Adjust grid for smaller screens */
         grid-template-rows: repeat(3, 25vw); /* Adjust grid rows */
-        gap: 1px; /* Maintain 1px gap between frames */
+        gap: 0.3%; /* Maintain 1px gap between frames */
     }
     .frame {
         width: 30vw; /* Responsive frame width */
