@@ -1,4 +1,3 @@
-/* General Reset for Consistency */
 * {
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -6,20 +5,18 @@
 }
 
 html, body {
-    height: 100%; /* Full height of the viewport */
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Default font */
+    height: 100%; 
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
 }
 
 /* Import Google Fonts for IBM Plex Mono */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
 
-/* Main container holding the three vertical boxes */
 .container {
     display: flex; /* Use Flexbox for side-by-side containers */
     height: 100vh; /* Full height of the viewport */
 }
 
-/* Individual containers */
 .box {
     flex: 1; /* Each box takes up equal width */
 }
@@ -29,90 +26,84 @@ html, body {
     flex-direction: column;  /* Stack elements vertically */
     justify-content: space-between; /* Push content to top and bottom */
     height: 100%;            /* Full height to distribute items */
-}
-
-/* Apply specific styling to each bottom section */
-.box1 h4, .box2 p, .spotify-link {
-    margin-top: auto;        /* Push this element to the bottom */
-    padding-bottom: 1rem;    /* Add some space at the bottom */
-}
-
-/* Apply specific styling to each bottom section */
-.box1 h3, .box2 grid-container {
-    padding-bottom: 1rem;    /* Add some space at the bottom */
-    margin-bottom: 20vh; /* Space below h3 based on viewport height */
-}
-
-/* Styles for the left container */
-.box1 {
-    background-color: white; /* White for visualization */
-    padding: 0.5rem 1.5rem; /* Responsive padding */
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;  /* Для project archive, spotify */
+    padding-right: 1.5rem;
     color: black; /* Text color */
 }
 
-/* Styles for headings in the left container */
+
+/* Box1 Box1 Box1Box1 Box1 Box1Box1 Box1 */
+.box1 {
+    display: flex;           /* Use Flexbox */
+    flex-direction: column;  /* Stack elements vertically */
+    justify-content: flex-start; /* Start from the top */
+    height: 100%;            /* Full height to distribute items */
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    color: black; /* Text color */
+}
+
+/* Box1: Adjust h1 and h2 margins */
 .box1 h1 {
-    font-size: 3rem; /* Responsive font size for h1 */
+    font-size: 3.1rem;
     font-weight: bold;
-    margin-bottom: -0.5rem; /* Remove any space below h1 */
+    margin-bottom: -0.5rem; /* Add a standard margin */
+    margin-top: -0.5rem;
 }
 
 .box1 h2 {
-    font-size: 1rem; /* Responsive font size for h2 */
-    margin-bottom: 1rem; /* Remove margins for better spacing */
+    font-size: 1rem;
+    margin: 0; /* No margin below h2 */
     font-weight: normal;
 }
+
 
 .box1 h3 {
-    font-size: 1rem; /* Responsive font size for h3 */
-    margin-bottom: 20vh; /* Space below h3 based on viewport height */
-    font-weight: normal;
-}
-
-.box1 h4 {
+    position: fixed; /* Fix position relative to the viewport */
+    bottom: 1.5rem; /* Distance from the bottom */
     font-size: 1rem; /* Responsive font size for h4 */
     text-decoration: none; /* Remove underline by default */
     color: inherit; /* Ensure link inherits the text color */
     transition: text-decoration 0.3s ease; /* Smooth transition */
 }
 
-.box1 h4 a:hover {
-    text-decoration: underline; /* Add underline on hover */
+.box1 h3 a:hover {
+    text-decoration: underline; 
 }
 
 /* Remove the underline and change color of [about] */
-.box1 h4 a {
+.box1 h3 a {
     text-decoration: none;
     color: black;
 }
+/* Box1 Box1 Box1Box1 Box1 Box1Box1 Box1 */
 
-/* Styles for the center container */
-.box2 {
-    background-color: white; /* White for visualization */
-    text-align: center; /* Center align text horizontally */
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: column; /* Vertical alignment */
-    justify-content: flex-start; /* Align content to the top */
-    padding: 9vh 0 1rem; /* Responsive padding */
-    color: black; /* Text color */
-    flex: 1.3; /* Make this container larger */
-    font-size: 1rem; /* Font size */
-    font-weight: bold;
+
+
+
+/* Box2 Box2 Box2 Box2 Box2 BoxBox2 Box2Box2 Box2 */
+p {
+    position: absolute; /* Position it absolutely */
+    bottom: 1.5rem; /* Для 1|2 */ 
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center correction */
+    /* Additional styles as needed */
 }
 
-/* Box2: Layout for the 3x3 grid of images */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 30%); /* 3 columns of 143px width */
+    grid-template-columns: repeat(3, 37%); /* 3 columns of 143px width */
     grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
     gap: 0.3%; /* 1px gap between frames */
     justify-content: center; /* Center the grid horizontally in the container */
-    margin-bottom: 1rem; /* Remove margins for better spacing */
     align-items: start; /* Align content to the top */
-    margin-bottom: 10vh; /* Space for 1|2 */
+    padding-top: 3.3rem;
 }
 
-/* Styles for images inside the frames */
 .frame img {
     width: 100%; /* Make image fill the frame width */
     height: 100%; /* Make image fill the frame height */
@@ -151,22 +142,10 @@ html, body {
     opacity: 1; /* Fade in text on hover */
 }
 
-/* 1|2 */
-.box2 p {
-    position: absolute; /* Use absolute positioning */
-    bottom: 1rem; /* Keep it fixed 1rem from the bottom of the container */
-    left: 50%; /* Horizontally center the p element */
-    transform: translateX(-50%); /* Correct for centering using transform */
-    font-size: 1rem; /* Consistent font size */
-    color: black;
-    margin: 0; /* Remove margin for consistency */
-    text-align: center; /* Align text to the center */
-}
 
 .page-link {
     cursor: pointer;
     font-weight: normal;
-    padding: 0 0.2rem; /* Responsive padding */
     
 }
 
@@ -177,137 +156,49 @@ html, body {
 .page-link.active {
     font-weight: bold;
 }
+/* Box2 Box2 Box2 Box2 Box2 BoxBox2 Box2Box2 Box2 */
 
-/* Position the real-time clock in the top-right corner */
+
+
+
+/* Box3 Box3 Box3 Box3 Box3 Box3 Box3 Box3 */
+.box3 {
+    background-color: white; 
+    text-align: right;
+    font-size: 1rem;
+}
+
+.hidden-text {
+    position: relative; /* Position relative inside box3 */
+    display: none; /* Initially hidden */
+    text-align: left;
+    padding-left: 1.5rem; /* Ensure same padding as box1 h2 */
+    padding-top: 4.8rem;
+}
+
 .clock {
-    position: absolute;
-    top: 1rem; /* Responsive space from the top */
-    right: 1rem; /* Responsive space from the right */
+    position: fixed; /* Fix position relative to the viewport */
+    top: 1rem; /* Distance from the top */
+    right: 1.5rem; /* Distance from the right */
     font-size: 1rem; /* Responsive font size */
     font-weight: bold;
     color: black;
-    padding: 0.5rem 0.7rem; /* Responsive padding */
 }
 
-/* Styles for the right container */
-.box3 {
-    background-color: white; /* White for visualization */
-    padding: 0.5rem 1.5rem; /* Responsive padding */
-    color: black; /* Text color */
-}
-
-/* Hidden text in container 3 */
-.hidden-text {
-    display: none; /* Initially hidden */
-    color: black;
-    font-size: 1rem; /* Responsive font size */
-    margin-top: 13vh; /* Space based on viewport height */
-}
-
-/* Additional styles for the Spotify link */
 .spotify-link {
-    position: absolute;
-    bottom: 1rem; /* Responsive space from the bottom */
-    right: 1rem; /* Responsive space from the right */
+    position: fixed; /* Fix position relative to the viewport */
+    bottom: 1.5rem; /* Distance from the bottom */
+    right: 1.5rem; /* Distance from the right */
     font-size: 1rem; /* Responsive font size */
     font-weight: bold; /* Make the text bold */
     color: black; /* Text color */
     text-decoration: none; /* No underline */
-    padding: 0.7rem; /* Responsive padding */
 }
 
 .spotify-link:hover {
     text-decoration: underline; /* Underline on hover */
 }
+/* Box3 Box3 Box3 Box3 Box3 Box3 Box3 Box3 */
 
-/* Full-screen modal styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity for background */
-}
 
-/* Modal content styles */
-.modal-content {
-    position: relative; /* Position relative for the close button */
-    margin: 0; /* Remove margin */
-    padding: 2rem; /* Responsive padding around the content */
-    color: white; /* Text color */
-    text-align: center; /* Center align text */
-}
-
-/* Modal boxes */
-.modal-container {
-    display: flex; /* Use Flexbox for layout */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-}
-
-.modal-box {
-    flex: 1; /* Equal width for both boxes */
-    padding: 2rem; /* Responsive padding inside each box */
-}
-
-.left {
-    text-align: left; /* Align text to the left */
-}
-
-.right {
-    text-align: left; /* Align text to the left */
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-}
-
-/* Image in modal */
-#modal-image {
-    max-width: 100%; /* Ensure image is responsive */
-    max-height: 80%; /* Limit height of image to 80% of screen height */
-    object-fit: contain; /* Maintain aspect ratio */
-}
-
-/* Close button style */
-.close {
-    color: white; /* Close button color */
-    position: absolute; /* Position in the top right */
-    right: 1rem; /* Responsive space */
-    top: 1rem; /* Responsive space */
-    font-size: 2rem; /* Responsive close button size */
-    font-weight: bold; /* Make it bold */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-.close:hover {
-    color: red; /* Change color on hover */
-}
-
-/* Hide scrollbar */
-::-webkit-scrollbar {
-    display: none;
-}
-
-/* Responsive media queries */
-@media (max-width: 768px) {
-    .box1 h1 {
-        font-size: 2.5rem; /* Smaller size for smaller screens */
-    }
-    .box1 h2, .box1 h3, .box1 h4 {
-        font-size: 0.9rem; /* Adjust font sizes */
-    }
-    .grid-container {
-        grid-template-columns: repeat(3, 30vw); /* Adjust grid for smaller screens */
-        grid-template-rows: repeat(3, 25vw); /* Adjust grid rows */
-        gap: 0.3%; /* Maintain 1px gap between frames */
-    }
-    .frame {
-        width: 30vw; /* Responsive frame width */
-        height: 25vw; /* Responsive frame height */
-    }
-    .modal-content {
-        padding: 1rem; /* Less padding for modal on smaller screens */
-    }
-}
 
