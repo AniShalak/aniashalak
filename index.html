@@ -17,16 +17,16 @@
     <div class="container">
         <div class="box box1">
             <h1>aniashalak</h1>
-            <h2>graphic designer and photographer<br> based in Prague</h2>
-            <h3>
+            <h2>graphic designer and photographer<br> based in Prague<br><br>
                 mob: +420 776-652-913<br>
                 mail to: aniashalak28@gmail.com<br>
                 ig: sunnniannni
-            </h3>
-            <h4>
+            </h2>
+                
+            <h3>
                 <a id="about-link" href="#">about</a><br>
                 <a id="archive-link" href="#">projects archive</a>
-            </h4>
+            </h3>
         </div>
         <div class="box box2" id="box2">
             <div class="grid-container">
@@ -136,7 +136,7 @@
 
                 if (pageNumber === 1) {
                     archiveText.innerHTML = "01 Dogs<br>02 Who are you<br>03 Roses<br>04 Meeeeeet me in forest ful<br>05 I know you<br>06 I love you<br>07 Hello it banny ravvit<br>08 Men in sund<br>09 The last but not least";
-                    aboutText.innerHTML = "Premised on the notion of ‘regenerative utility’, leather goods label Yu Mei calibrates the codes of luxury and functionality, always with reverence for the environment...";
+                    aboutText.innerHTML = "premised on the notion of ‘regenerative utility’, leather goods label Yu Mei calibrates the codes of luxury and functionality, always with reverence for the environment...";
                     archiveText.style.display = 'block'; // Show archive text for Page 1
                 } else {
                     archiveText.innerHTML = "bue bue"; // Custom message for Page 2
@@ -150,7 +150,7 @@
         </script>
 
         <div class="box box3" id="hidden-container">
-            <p class="hidden-text" id="about-text">Premised on the notion of ‘regenerative utility’, leather goods label Yu Mei calibrates the codes of luxury and functionality, always with reverence for the environment. Founder Jessie Wong partnered with us to realise a comprehensive, ongoing rebrand grounded in the Yu Mei brand pillars of materiality, practicality and regeneration. With a view to accentuating premium functionality within a coherent aesthetic ecosystem, we took cues from the vocabulary of archiving and indexing to build a design system balanced on elegance and practicality.</p>
+            <p class="hidden-text" id="about-text">premised on the notion of ‘regenerative utility’, leather goods label Yu Mei calibrates the codes of luxury and functionality, always with reverence for the environment. Founder Jessie Wong partnered with us to realise a comprehensive, ongoing rebrand grounded in the Yu Mei brand pillars of materiality, practicality and regeneration. With a view to accentuating premium functionality within a coherent aesthetic ecosystem, we took cues from the vocabulary of archiving and indexing to build a design system balanced on elegance and practicality.</p>
             <p class="hidden-text" id="archive-text">01 Dogs<br>02 Who are you<br>03 Roses<br>04 Meeeeeet me in forest ful<br>05 I know you<br>06 I love you<br>07 Hello it banny ravvit<br>08 Men in sund<br>09 The last but not least</p>
             <div class="clock" id="clock"></div>
             <!-- Spotify Link -->
@@ -250,63 +250,63 @@
     let currentPage = 1;  // Track the current page
 
     // Function to open full-screen layout for a specific frame
-    function openNewLayout(frameIndex) {
-        const fullScreenLayout = document.createElement('div');
-        fullScreenLayout.style.position = 'fixed';
-        fullScreenLayout.style.top = '0';
-        fullScreenLayout.style.left = '0';
-        fullScreenLayout.style.width = '100vw';
-        fullScreenLayout.style.height = '100vh';
-        fullScreenLayout.style.display = 'flex';
-        fullScreenLayout.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Optional: Add a semi-transparent background
-
-
-        // Select the content based on the current page
-        const fullScreenContent = (currentPage === 1) ? fullScreenContentPage1[frameIndex] : fullScreenContentPage2[frameIndex];
-
-        // Create two containers (one for left text, one for right content)
-        const leftDiv = document.createElement('div');
-        leftDiv.style.flex = '1';
-        leftDiv.innerHTML = `<p>${fullScreenContent.leftText}</p>`;
-        leftDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; // Half-transparent white background
-
-        const rightDiv = document.createElement('div');
-        rightDiv.style.flex = '1';
-        rightDiv.innerHTML = fullScreenContent.rightContent;
-        rightDiv.style.overflowY = 'auto'; // Allow vertical scrolling
-        rightDiv.style.backgroundColor = 'green(255, 255, 255, 0.5)'; // Half-transparent
+function openNewLayout(frameIndex) {
+    const fullScreenLayout = document.createElement('div');
+    fullScreenLayout.style.position = 'fixed';
+    fullScreenLayout.style.top = '0';
+    fullScreenLayout.style.left = '0';
+    fullScreenLayout.style.width = '100vw';
+    fullScreenLayout.style.height = '100vh';
+    fullScreenLayout.style.display = 'flex';
+    fullScreenLayout.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Semi-transparent background
     
-        // Hide the scrollbar (works on WebKit browsers)
-        rightDiv.style.scrollbarWidth = 'none'; // For Firefox
-        rightDiv.style.msOverflowStyle = 'none'; // For Internet Explorer and Edge
-        rightDiv.style.overflow = '-moz-scrollbars-none'; // For older versions of Firefox
+    // Select the content based on the current page
+    const fullScreenContent = (currentPage === 1) ? fullScreenContentPage1[frameIndex] : fullScreenContentPage2[frameIndex];
 
+    // Create two containers (one for left text, one for right content)
+    const leftDiv = document.createElement('div');
+    leftDiv.style.flex = '0.3'; // Adjust flex for left container (e.g., 40% of the width)
+    leftDiv.style.padding = '2rem'; // Add padding for text
+    leftDiv.innerHTML = `<p>${fullScreenContent.leftText}</p>`;
+    leftDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Half-transparent white background
 
-        // Create a close button
-        const closeButton = document.createElement('button');
-        closeButton.textContent = 'Close';
-        closeButton.style.position = 'absolute';
-        closeButton.style.top = '20px';
-        closeButton.style.right = '20px';
-        closeButton.style.padding = '10px 20px';
-        closeButton.style.fontSize = '18px';
-        closeButton.style.backgroundColor = '#fff';
-        closeButton.style.border = 'none';
-        closeButton.style.cursor = 'pointer';
+    const rightDiv = document.createElement('div');
+    rightDiv.style.flex = '0.7'; // Adjust flex for right container (e.g., 60% of the width)
+    rightDiv.style.padding = '2rem'; // Add padding for content
+    rightDiv.innerHTML = fullScreenContent.rightContent;
+    rightDiv.style.overflowY = 'auto'; // Allow vertical scrolling
+    rightDiv.style.backgroundColor = 'rgba(0, 255, 0, 0.5)'; // Half-transparent green
 
-        // Add event listener to close button to return to the original content
-        closeButton.addEventListener('click', function() {
-            document.body.removeChild(fullScreenLayout); // Remove full-screen layout
-        });
+    // Hide the scrollbar (works on WebKit browsers)
+    rightDiv.style.scrollbarWidth = 'none'; // For Firefox
+    rightDiv.style.msOverflowStyle = 'none'; // For Internet Explorer and Edge
 
-        // Append elements to full-screen layout
-        fullScreenLayout.appendChild(leftDiv);
-        fullScreenLayout.appendChild(rightDiv);
-        fullScreenLayout.appendChild(closeButton);
+    // Create a close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.fontSize = '18px';
+    closeButton.style.backgroundColor = '#fff';
+    closeButton.style.border = 'none';
+    closeButton.style.cursor = 'pointer';
 
-        // Append full-screen layout to the body
-        document.body.appendChild(fullScreenLayout);
-    }
+    // Add event listener to close button to return to the original content
+    closeButton.addEventListener('click', function() {
+        document.body.removeChild(fullScreenLayout); // Remove full-screen layout
+    });
+
+    // Append elements to full-screen layout
+    fullScreenLayout.appendChild(leftDiv);
+    fullScreenLayout.appendChild(rightDiv);
+    fullScreenLayout.appendChild(closeButton);
+
+    // Append full-screen layout to the body
+    document.body.appendChild(fullScreenLayout);
+}
+
 
     // Function to change the content of the frames based on the selected page
     function changeContent(pageNumber) {
