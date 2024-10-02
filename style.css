@@ -37,6 +37,12 @@ html, body {
     padding-bottom: 1rem;    /* Add some space at the bottom */
 }
 
+/* Apply specific styling to each bottom section */
+.box1 h3, .box2 grid-container {
+    padding-bottom: 1rem;    /* Add some space at the bottom */
+    margin-bottom: 20vh; /* Space below h3 based on viewport height */
+}
+
 /* Styles for the left container */
 .box1 {
     background-color: white; /* White for visualization */
@@ -97,11 +103,11 @@ html, body {
 /* Box2: Layout for the 3x3 grid of images */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 27%); /* 3 columns of 143px width */
+    grid-template-columns: repeat(3, 30%); /* 3 columns of 143px width */
     grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
     gap: 0.3%; /* 1px gap between frames */
     justify-content: center; /* Center the grid horizontally in the container */
-    margin-top: 45px; /* Set this to 0px to remove extra margin */
+    margin-bottom: 1rem; /* Remove margins for better spacing */
     align-items: start; /* Align content to the top */
     margin-bottom: 10vh; /* Space for 1|2 */
 }
@@ -137,7 +143,7 @@ html, body {
     color: black; /* Text color */
     transition: opacity 0.3s ease; /* Smooth transition for the opacity */
     opacity: 0; /* Start hidden */
-    font-size: 0.9rem; /* Responsive font size */
+    font-size: 0.75rem; /* Responsive font size */
 }
 
 /* Show text on hover */
@@ -146,6 +152,17 @@ html, body {
 }
 
 /* 1|2 */
+.box2 p {
+    position: absolute; /* Use absolute positioning */
+    bottom: 1rem; /* Keep it fixed 1rem from the bottom of the container */
+    left: 50%; /* Horizontally center the p element */
+    transform: translateX(-50%); /* Correct for centering using transform */
+    font-size: 1rem; /* Consistent font size */
+    color: black;
+    margin: 0; /* Remove margin for consistency */
+    text-align: center; /* Align text to the center */
+}
+
 .page-link {
     cursor: pointer;
     font-weight: normal;
@@ -293,3 +310,4 @@ html, body {
         padding: 1rem; /* Less padding for modal on smaller screens */
     }
 }
+
