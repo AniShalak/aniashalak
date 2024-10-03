@@ -96,7 +96,7 @@ p {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
+    grid-template-columns: repeat(3, 39%); /* 3 columns of 143px width */
     grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
     gap: 0.3%; /* 1px gap between frames */
     justify-content: center; /* Center the grid horizontally in the container */
@@ -293,7 +293,7 @@ p {
 @media (min-width: 769px) and (max-width: 1199px) {
     .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
+    grid-template-columns: repeat(3, 39%); /* 3 columns of 143px width */
     grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
     gap: 0.3%; /* 1px gap between frames */
     justify-content: center; /* Center the grid horizontally in the container */
