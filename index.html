@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Full-Screen Layout</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="1.css">
     <style>
         /* Add any custom CSS here */
         .hidden-text {
@@ -204,53 +204,90 @@
     
     <script >
         
+// Define fullscreen content for Page 1
+const fullScreenContentPage1 = [
+    {
+        leftText: `<div>"Hello from Page 1, Frame 1!"></div>`,
+        rightContent: `<div style="width: 100px; height: 100px; background-color: red;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 2!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: blue;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 3!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: green;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 4!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: orange;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 5!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: yellow;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 6!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: purple;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 7!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: pink;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 8!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: cyan;"></div>`
+    },
+    {
+        leftText: "Hello from Page 1, Frame 9!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: magenta;"></div>`
+    },
+];
 
-    // Define fullscreen content for Page 1
-    const fullScreenContentPage1 = [
-        {
-            leftText: "Hello from Page 1, Frame 1!",
-            rightContent: `<div style="width: 100px; height: 100px; background-color: red;"></div>
-            <div style="width: 100px; height: 200px; background-color: yellow; margin-top: 10px;"></div>
-            <div style="width: 100px; height: 200px; background-color: green; margin-top: 10px;"></div>
-            <div style="width: 100px; height: 200px; background-color: yellow; margin-top: 10px;"></div>
-            <div style="width: 100px; height: 200px; background-color: green; margin-top: 10px;"></div>`
-        },
-        {
-            leftText: "Hello from Page 1, Frame 2!",
-            rightContent: `<div style="width: 100px; height: 100px; background-color: blue;"></div>`
-        },
-        // Add content for frames 3-9 for Page 1
-        {
-            leftText: "Hello from Page 1, Frame 3!",
-            rightContent: `<div style="width: 100px; height: 100px; background-color: green;"></div>`
-        },
-        
-        {
-            leftText: "Hello from Page 1, Frame 4!",
-            rightContent: `<div style="width: 100px; height: 100px; background-color: green;"></div>`
-        },
-        
-    
-        // Add similar entries for all 9 frames on Page 1
-    ];
+// Define fullscreen content for Page 2
+const fullScreenContentPage2 = [
+    {
+        leftText: "Welcome to Page 2, Frame 1!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: black;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 2!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: yellow;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 3!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: green;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 4!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: blue;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 5!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: orange;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 6!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: pink;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 7!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: teal;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 8!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: gray;"></div>`
+    },
+    {
+        leftText: "Welcome to Page 2, Frame 9!",
+        rightContent: `<div style="width: 100px; height: 100px; background-color: violet;"></div>`
+    },
+];
 
-    // Define fullscreen content for Page 2
-    const fullScreenContentPage2 = [
-        {
-            leftText: "Welcome to Page 2, Frame 1!",
-            rightContent: `<div style="width: 100px; height: 100px; background-color: black;"></div>`
-        },
-        {
-            leftText: "Welcome to Page 2, Frame 2!",
-            rightContent: `<div style="width: 100px; height: 100px; background-color: yellow;"></div>`
-        },
-        // Add content for frames 3-9 for Page 2
-    ];
 
     let currentPage = 1;  // Track the current page
 
-    // Function to open full-screen layout for a specific frame
-function openNewLayout(frameIndex) {
+   function openNewLayout(frameIndex) {
     const fullScreenLayout = document.createElement('div');
     fullScreenLayout.style.position = 'fixed';
     fullScreenLayout.style.top = '0';
@@ -259,19 +296,25 @@ function openNewLayout(frameIndex) {
     fullScreenLayout.style.height = '100vh';
     fullScreenLayout.style.display = 'flex';
     fullScreenLayout.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Semi-transparent background
-    
+
     // Select the content based on the current page
     const fullScreenContent = (currentPage === 1) ? fullScreenContentPage1[frameIndex] : fullScreenContentPage2[frameIndex];
 
     // Create two containers (one for left text, one for right content)
     const leftDiv = document.createElement('div');
-    leftDiv.style.flex = '0.3'; // Adjust flex for left container (e.g., 40% of the width)
+    leftDiv.style.flex = '0.3'; // Adjust flex for left container (e.g., 30% of the width)
     leftDiv.style.padding = '2rem'; // Add padding for text
-    leftDiv.innerHTML = `<p>${fullScreenContent.leftText}</p>`;
+    leftDiv.style.display = 'flex'; // Enable flexbox for centering
+    leftDiv.style.flexDirection = 'column'; // Vertical stacking of elements
+    leftDiv.style.justifyContent = 'center'; // Center text vertically
+    leftDiv.style.alignItems = 'center'; // Center text horizontally
+    leftDiv.style.color = 'black'; // Set text color
+    leftDiv.style.fontSize = '24px'; // Adjust the font size
     leftDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Half-transparent white background
+    leftDiv.innerHTML = `<p>${fullScreenContent.leftText}</p>`;
 
     const rightDiv = document.createElement('div');
-    rightDiv.style.flex = '0.7'; // Adjust flex for right container (e.g., 60% of the width)
+    rightDiv.style.flex = '0.7'; // Adjust flex for right container (e.g., 70% of the width)
     rightDiv.style.padding = '2rem'; // Add padding for content
     rightDiv.innerHTML = fullScreenContent.rightContent;
     rightDiv.style.overflowY = 'auto'; // Allow vertical scrolling
@@ -306,6 +349,8 @@ function openNewLayout(frameIndex) {
     // Append full-screen layout to the body
     document.body.appendChild(fullScreenLayout);
 }
+
+
 
 
     // Function to change the content of the frames based on the selected page
@@ -345,7 +390,7 @@ function openNewLayout(frameIndex) {
     const archiveText = document.getElementById('archive-text');
 
     if (pageNumber === 1) {
-        aboutText.innerHTML = "Premised on the notion of ‘regenerative utility’, leather goods label Yu Mei calibrates the codes of luxury and functionality, always with reverence for the environment and here we are";
+        aboutText.innerHTML = "premised on the notion of ‘regenerative utility’, leather goods label Yu Mei calibrates the codes of luxury and functionality, always with reverence for the environment and here we are";
         archiveText.innerHTML = "01 Dogs<br>02 Who are you<br>03 Roses<br>04 Meeeeeet me in forest ful<br>05 I know you<br>06 I love you<br>07 Hello it banny ravvit<br>08 Men in sund<br>09 The last but not least";
         
     } else {
