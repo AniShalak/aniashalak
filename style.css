@@ -96,7 +96,7 @@ p {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 37%); /* 3 columns of 143px width */
+    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
     grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
     gap: 0.3%; /* 1px gap between frames */
     justify-content: center; /* Center the grid horizontally in the container */
@@ -201,4 +201,111 @@ p {
 /* Box3 Box3 Box3 Box3 Box3 Box3 Box3 Box3 */
 
 
+/* Full-screen modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity for background */
+}
+
+/* Modal content styles */
+.modal-content {
+    position: relative; /* Position relative for the close button */
+    margin: 0; /* Remove margin */
+    padding: 2rem; /* Responsive padding around the content */
+    color: white; /* Text color */
+    text-align: left; /* Center align text */
+}
+
+/* Modal boxes */
+.modal-container {
+    display: flex; /* Use Flexbox for layout */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+.modal-box {
+    flex: 1; /* Equal width for both boxes */
+    padding: 2rem; /* Responsive padding inside each box */
+}
+
+.left {
+    text-align: left; /* Align text to the left */
+}
+
+.right {
+    text-align: left; /* Align text to the left */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+}
+
+/* Image in modal */
+#modal-image {
+    max-width: 100%; /* Ensure image is responsive */
+    max-height: 80%; /* Limit height of image to 80% of screen height */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Close button style */
+.close {
+    color: white; /* Close button color */
+    position: absolute; /* Position in the top right */
+    right: 1rem; /* Responsive space */
+    top: 1rem; /* Responsive space */
+    font-size: 2rem; /* Responsive close button size */
+    font-weight: bold; /* Make it bold */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.close:hover {
+    color: red; /* Change color on hover */
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+/* For smaller screens like mobile devices (up to 480px wide) */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3x3 grid with smaller items */
+        grid-template-rows: repeat(3, minmax(100px, 1fr));    /* Keep rows equal in size */
+    }
+}
+
+/* For tablets and small laptops (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(150px, 1fr)); /* Increase item size */
+        grid-template-rows: repeat(3, minmax(150px, 1fr));
+    }
+}
+
+/* For medium to large screens (769px to 1199px) */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
+    grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
+    gap: 0.3%; /* 1px gap between frames */
+    justify-content: center; /* Center the grid horizontally in the container */
+    align-items: start; /* Align content to the top */
+    padding-top: 3.3rem;
+}
+
+/* For large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Large item sizes */
+        grid-template-rows: repeat(3, minmax(250px, 1fr));
+    }
+}
 
