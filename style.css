@@ -87,11 +87,11 @@ html, body {
 
 /* Box2 Box2 Box2 Box2 Box2 BoxBox2 Box2Box2 Box2 */
 p {
-    position: absolute; /* Position it absolutely */
-    bottom: 1.5rem; /* Для 1|2 */ 
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center correction */
-    /* Additional styles as needed */
+    position: fixed; /* Fix the element's position relative to the viewport */
+    bottom: 1.5rem; /* Distance from the bottom of the viewport */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Ensure it's centered by offsetting by half its width */
+    z-index: 10; /* Ensure it's above other elements, just in case */
 }
 
 .grid-container {
@@ -272,40 +272,4 @@ p {
 
 
 
-
-/* For smaller screens like mobile devices (up to 480px wide) */
-@media (max-width: 480px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3x3 grid with smaller items */
-        grid-template-rows: repeat(3, minmax(100px, 1fr));    /* Keep rows equal in size */
-    }
-}
-
-/* For tablets and small laptops (481px to 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(150px, 1fr)); /* Increase item size */
-        grid-template-rows: repeat(3, minmax(150px, 1fr));
-    }
-}
-
-/* For medium to large screens (769px to 1199px) */
-@media (min-width: 769px) and (max-width: 1199px) {
-    .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
-    grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
-    gap: 0.3%; /* 1px gap between frames */
-    justify-content: center; /* Center the grid horizontally in the container */
-    align-items: start; /* Align content to the top */
-    padding-top: 3.3rem;
-}
-
-/* For large screens (1200px and above) */
-@media (min-width: 1200px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Large item sizes */
-        grid-template-rows: repeat(3, minmax(250px, 1fr));
-    }
-}
 
