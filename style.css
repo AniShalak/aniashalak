@@ -102,7 +102,10 @@ p {
     justify-content: center; /* Center the grid horizontally in the container */
     align-items: start; /* Align content to the top */
     padding-top: 3.3rem;
+    padding-bottom: 3rem; /* Add space at the bottom */
+    min-height: calc(100vh - 3rem); /* Ensure grid never exceeds screen height and leaves bottom space */
 }
+
 
 .frame img {
     width: 100%; /* Make image fill the frame width */
@@ -268,6 +271,75 @@ p {
 /* Hide scrollbar */
 ::-webkit-scrollbar {
     display: none;
+}
+
+
+
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(30%, 1fr)); /* Adjust for smaller grid items */
+        grid-template-rows: repeat(3, minmax(30%, 1fr));
+        padding-bottom: 3rem; /* Maintain the bottom space */
+        min-height: calc(100vh - 3rem);
+    }
+}
+
+/* For tablets and small laptops */
+@media (min-width: 481px) and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(35%, 1fr)); /* Adjust for medium grid items */
+        grid-template-rows: repeat(3, minmax(35%, 1fr));
+        padding-bottom: 3rem; /* Maintain the bottom space */
+        min-height: calc(100vh - 3rem);
+    }
+}
+
+/* For medium to large screens (769px to 1199px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
+    grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
+    gap: 0.3%; /* 1px gap between frames */
+    justify-content: center; /* Center the grid horizontally in the container */
+    align-items: start; /* Align content to the top */
+    padding-top: 3.3rem;
+    padding-bottom: 3rem; /* Add space at the bottom */
+    min-height: calc(100vh - 3rem); /* Ensure grid never exceeds screen height and leaves bottom space */
+}
+    
+    
+
+/* For large screens (1300px to 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(40%, 1fr));
+        grid-template-rows: repeat(3, minmax(40%, 1fr));
+        padding-bottom: 3rem;
+        min-height: calc(100vh - 3rem);
+    }
+}
+
+/* For extra-large screens (1600px to 1919px) */
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(45%, 1fr)); /* Bigger grid items */
+        grid-template-rows: repeat(3, minmax(45%, 1fr)); /* Larger rows */
+        padding-bottom: 3rem; /* Keep space at the bottom */
+        min-height: calc(100vh - 3rem);
+    }
+}
+
+/* For ultra-large screens (1920px and above) */
+@media (min-width: 1920px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(50%, 1fr)); /* Even larger grid items */
+        grid-template-rows: repeat(3, minmax(50%, 1fr)); /* Larger rows */
+        padding-bottom: 3rem; /* Keep space at the bottom */
+        min-height: calc(100vh - 3rem); /* Ensure grid takes full height minus padding */
+    }
 }
 
 
