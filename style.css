@@ -83,44 +83,41 @@ html, body {
 /* Box1 Box1 Box1Box1 Box1 Box1Box1 Box1 */
 
 
-
-
 /* Box2 Box2 Box2 Box2 Box2 BoxBox2 Box2Box2 Box2 */
 p {
     position: fixed; /* Fix the element's position relative to the viewport */
     bottom: 1.5rem; /* Distance from the bottom of the viewport */
     left: 50%; /* Center it horizontally */
     transform: translateX(-50%); /* Ensure it's centered by offsetting by half its width */
-    z-index: 10; /* Ensure it's above other elements, just in case */
+
 }
 
+/* Make sure the grid container layout is responsive */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
-    grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
-    gap: 0.3%; /* 1px gap between frames */
-    justify-content: center; /* Center the grid horizontally in the container */
-    align-items: start; /* Align content to the top */
-    padding-top: 3.3rem;
-    padding-bottom: 3rem; /* Add space at the bottom */
-    min-height: calc(100vh - 3rem); /* Ensure grid never exceeds screen height and leaves bottom space */
+    grid-template-columns: repeat(3, 36%); /* 3 columns of 143px width */
+    grid-template-rows: repeat(3, 33.5%);    /* 3 rows of 184px height */
+    column-gap: 1px; /* Gap between columns */
+    row-gap: 0.5px; /* Gap between rows */
+    justify-content: center; /* Center content */
+    align-items: start; /* Align items to the start */
+    padding-top: 3.3rem ;
+    bottom: 1.5rem; /* Distance from the bottom of the viewport */
 }
 
-
-.frame img {
-    width: 100%; /* Make image fill the frame width */
-    height: 100%; /* Make image fill the frame height */
-    object-fit: cover; /* Maintain aspect ratio while covering the frame */
-}
-
-/* Styles for the frame with a blur effect on hover */
+/* Frame containing the image */
 .frame {
-    background-color: white; /* Background for visualization */
-    width: 100%; /* Fixed frame width */
-    height: 100%; /* Fixed frame height */
-    transition: filter 0.3s ease; /* Smooth transition for the filter */
-    position: relative; /* Allows absolute positioning for the text */
-    overflow: hidden; /* Hides overflow */
+    position: relative;
+    width: 100%; /* Full width of the grid cell */
+    aspect-ratio: 143 / 184; /* Maintain aspect ratio of the frame */
+    overflow: hidden; /* Hide any overflow from the image */
+}
+
+/* Ensure images fill the frame correctly */
+.frame img {
+    width: 100%; /* Ensure the image fills the container horizontally */
+    height: 100%; /* Ensure the image fills the container vertically */
+    object-fit: cover; /* Cover the entire area without distorting the image */
 }
 
 /* Blur effect on hover */
@@ -272,76 +269,4 @@ p {
 ::-webkit-scrollbar {
     display: none;
 }
-
-
-
-
-/* For mobile screens */
-@media (max-width: 480px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(30%, 1fr)); /* Adjust for smaller grid items */
-        grid-template-rows: repeat(3, minmax(30%, 1fr));
-        padding-bottom: 3rem; /* Maintain the bottom space */
-        min-height: calc(100vh - 3rem);
-    }
-}
-
-/* For tablets and small laptops */
-@media (min-width: 481px) and (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(35%, 1fr)); /* Adjust for medium grid items */
-        grid-template-rows: repeat(3, minmax(35%, 1fr));
-        padding-bottom: 3rem; /* Maintain the bottom space */
-        min-height: calc(100vh - 3rem);
-    }
-}
-
-/* For medium to large screens (769px to 1199px) */
-@media (min-width: 769px) and (max-width: 1200px) {
-    .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 38%); /* 3 columns of 143px width */
-    grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
-    gap: 0.3%; /* 1px gap between frames */
-    justify-content: center; /* Center the grid horizontally in the container */
-    align-items: start; /* Align content to the top */
-    padding-top: 3.3rem;
-    padding-bottom: 3rem; /* Add space at the bottom */
-    min-height: calc(100vh - 3rem); /* Ensure grid never exceeds screen height and leaves bottom space */
-}
-    
-    
-
-/* For large screens (1300px to 1599px) */
-@media (min-width: 1200px) and (max-width: 1599px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(40%, 1fr));
-        grid-template-rows: repeat(3, minmax(40%, 1fr));
-        padding-bottom: 3rem;
-        min-height: calc(100vh - 3rem);
-    }
-}
-
-/* For extra-large screens (1600px to 1919px) */
-@media (min-width: 1600px) and (max-width: 1919px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(45%, 1fr)); /* Bigger grid items */
-        grid-template-rows: repeat(3, minmax(45%, 1fr)); /* Larger rows */
-        padding-bottom: 3rem; /* Keep space at the bottom */
-        min-height: calc(100vh - 3rem);
-    }
-}
-
-/* For ultra-large screens (1920px and above) */
-@media (min-width: 1920px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(50%, 1fr)); /* Even larger grid items */
-        grid-template-rows: repeat(3, minmax(50%, 1fr)); /* Larger rows */
-        padding-bottom: 3rem; /* Keep space at the bottom */
-        min-height: calc(100vh - 3rem); /* Ensure grid takes full height minus padding */
-    }
-}
-
-
-
 
