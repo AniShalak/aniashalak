@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Full-Screen Layout</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="1.css">
     <style>
         /* Add any custom CSS here */
         .hidden-text {
@@ -207,8 +207,15 @@
 // Define fullscreen content for Page 1
 const fullScreenContentPage1 = [
     {
-        leftText: `<div>"Hello from Page 1, Frame 1!"></div>`,
-        rightContent: `<div style="width: 100px; height: 100px; background-color: red;"></div>`
+        leftText: `<div class="lefttext"><p5>vinca minor</p5><br><br>
+the issue with left padding not working in your leftdiv is likely caused by the fact that you are using a flexbox layout with justifyContent and alignitems, which can sometimes override the expected behavior of padding in certain contexts. to ensure the padding works as expected, make sure you're applying it correctly, and the flexbox properties don't interfere with it. Here's a step-by-step breakdown to troubleshoot and fix it</div>`,
+        rightContent: `<div class="right-content">
+            <div class="half-images">
+                <img src="shi.gif" class="half-img" alt="Image 2">
+                <img src="poster2.jpg" class="half-img" alt="Image 2">
+            </div>
+ <img src="z10.jpg">
+        </div>`
     },
     {
         leftText: "Hello from Page 1, Frame 2!",
@@ -247,8 +254,12 @@ const fullScreenContentPage1 = [
 // Define fullscreen content for Page 2
 const fullScreenContentPage2 = [
     {
-        leftText: "Welcome to Page 2, Frame 1!",
-        rightContent: `<div style="width: 100px; height: 100px; background-color: black;"></div>`
+        leftText: `<div class="lefttext"><p5>ph01</p5><br><br>
+the issue with left padding not working in your leftdiv is likely caused by the fact that you are using a flexbox layout with justifyContent and alignitems, which can sometimes override the expected behavior of padding in certain contexts. to ensure the padding works as expected, make sure you're applying it correctly, and the flexbox properties don't interfere with it. Here's a step-by-step breakdown to troubleshoot and fix it</div>`,
+        rightContent: `<div class="right-content">
+ <img src="a.jpg"> 
+ <img src="a2.jpg">
+        </div>`
     },
     {
         leftText: "Welcome to Page 2, Frame 2!",
@@ -295,30 +306,34 @@ const fullScreenContentPage2 = [
     fullScreenLayout.style.width = '100vw';
     fullScreenLayout.style.height = '100vh';
     fullScreenLayout.style.display = 'flex';
-    fullScreenLayout.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Semi-transparent background
+    fullScreenLayout.style.backgroundColor = '#ffffff'; // Semi-transparent background
 
     // Select the content based on the current page
     const fullScreenContent = (currentPage === 1) ? fullScreenContentPage1[frameIndex] : fullScreenContentPage2[frameIndex];
 
     // Create two containers (one for left text, one for right content)
     const leftDiv = document.createElement('div');
-    leftDiv.style.flex = '0.3'; // Adjust flex for left container (e.g., 30% of the width)
-    leftDiv.style.padding = '2rem'; // Add padding for text
-    leftDiv.style.display = 'flex'; // Enable flexbox for centering
-    leftDiv.style.flexDirection = 'column'; // Vertical stacking of elements
-    leftDiv.style.justifyContent = 'center'; // Center text vertically
-    leftDiv.style.alignItems = 'center'; // Center text horizontally
-    leftDiv.style.color = 'black'; // Set text color
-    leftDiv.style.fontSize = '24px'; // Adjust the font size
-    leftDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Half-transparent white background
-    leftDiv.innerHTML = `<p>${fullScreenContent.leftText}</p>`;
+
+       leftDiv.style.flex = '0.25'; // Adjust flex for left container (e.g., 30% of the width)
+leftDiv.style.padding = '1.5rem'; // Add padding for text (2rem is just an example, adjust as needed)
+leftDiv.style.paddingTop = '0.5rem';
+leftDiv.style.display = 'flex'; // Enable flexbox for centering
+leftDiv.style.flexDirection = 'column'; // Vertical stacking of elements
+leftDiv.style.alignItems = 'flex-start'; // Align text horizontally to the left
+leftDiv.style.color = 'black'; // Set text color
+leftDiv.style.fontSize = '24px'; // Adjust the font size
+leftDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Half-transparent background
+leftDiv.innerHTML = `<p>${fullScreenContent.leftText}</p>`;
+leftDiv.style.textAlign = 'left'; // Align text to the left
+
+
 
     const rightDiv = document.createElement('div');
-    rightDiv.style.flex = '0.7'; // Adjust flex for right container (e.g., 70% of the width)
-    rightDiv.style.padding = '2rem'; // Add padding for content
+    rightDiv.style.flex = '0.84'; // Adjust flex for right container (e.g., 70% of the width)
+    rightDiv.style.padding = '0'; // Add padding for content
     rightDiv.innerHTML = fullScreenContent.rightContent;
     rightDiv.style.overflowY = 'auto'; // Allow vertical scrolling
-    rightDiv.style.backgroundColor = 'rgba(0, 255, 0, 0.5)'; // Half-transparent green
+    rightDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Half-transparent green
 
     // Hide the scrollbar (works on WebKit browsers)
     rightDiv.style.scrollbarWidth = 'none'; // For Firefox
