@@ -120,8 +120,7 @@ html, body {
     row-gap: 0.5px;
   justify-content: center;
   align-items: start;
-  width: min(calc(71vh - 5.8rem), 100%);
-  margin: 0 auto;
+
 }
 
 
