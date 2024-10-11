@@ -319,3 +319,16 @@ html, body {
     }
 }
 
+.half-images {
+    height: 100%;
+    flex: 1;
+    flex-direction: row;
+    display: flex;
+}
+
+.half-img {
+    height: 50%;
+    width: 50%;
+    justify-content: flex-start;
+}
+
