@@ -53,7 +53,7 @@ html, body {
 
 /* Styles for headings in the left container */
 .box1 h1 {
-    font-size: 3rem; /* Responsive font size for h1 */
+    font-size: 3.1rem; /* Responsive font size for h1 */
     font-weight: bold;
     margin-bottom: -0.5rem; /* Remove any space below h1 */
 }
