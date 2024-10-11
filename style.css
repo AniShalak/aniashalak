@@ -33,7 +33,7 @@ html, body {
 }
 
 /* Apply specific styling to each bottom section */
-.box1 h4, .box2 p, .spotify-link {
+.box1 h3, .box2 p, .spotify-link {
     margin-top: auto;        /* Push this element to the bottom */
     padding-bottom: 1rem;    /* Add some space at the bottom */
 }
@@ -66,23 +66,23 @@ html, body {
 
 .box1 h3 {
     font-size: 1rem; /* Responsive font size for h3 */
-    margin-bottom: 20vh; /* Space below h3 based on viewport height */
-    font-weight: normal;
+    margin-bottom: 0vh; /* Space below h3 based on viewport height */
+    font-weight: bold;
 }
 
-.box1 h4 {
+.box1 h3 {
     font-size: 1rem; /* Responsive font size for h4 */
     text-decoration: none; /* Remove underline by default */
     color: inherit; /* Ensure link inherits the text color */
     transition: text-decoration 0.3s ease; /* Smooth transition */
 }
 
-.box1 h4 a:hover {
+.box1 h3 a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
 
 /* Remove the underline and change color of [about] */
-.box1 h4 a {
+.box1 h3 a {
     text-decoration: none;
     color: black;
 }
@@ -117,7 +117,8 @@ html, body {
     display: grid;
     grid-template-columns: repeat(3, 30%); /* 3 columns of 143px width */
     grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
-    row-gap: 0.5px;
+    row-gap: 1px;
+    column-gap: 1px;
   justify-content: center;
   align-items: start;
   width: min(calc(71vh - 5.8rem), 100%);
