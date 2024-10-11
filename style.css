@@ -115,8 +115,8 @@ html, body {
 /* Box2: Layout for the 3x3 grid of images */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 30%); /* 3 columns of 143px width */
-    grid-template-rows: repeat(3, 32%);    /* 3 rows of 184px height */
+    grid-template-columns: repeat(3, 35%); /* 3 columns of 143px width */
+    grid-template-rows: repeat(3, 33%);    /* 3 rows of 184px height */
     row-gap: 1px;
     column-gap: 1px;
   justify-content: center;
